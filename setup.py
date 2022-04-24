@@ -27,6 +27,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-        'numpy', 'scipy', 'matplotlib', 'pandas', 'torchvision', 'transformers'
+        'numpy', 'scipy', 'matplotlib', 'pandas', 'torchvision'
     ],
 )
