@@ -97,7 +97,7 @@ class CAE(nn.Module):
 
 
 class lstm_ae(nn.Module):
-    def __init__(self, in_units=137, out_units=182, t_out=180, drop=0.46)-> None:
+    def __init__(self, in_units=137, out_units=182, t_out=180, hyper_param)-> None:
         super(lstm_ae, self).__init__()
         self.name = 'lstm_ae'
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -105,7 +105,8 @@ class lstm_ae(nn.Module):
         # out_units = 182
         
         self.t_out = t_out
-        latent_dim = 40
+        latent_dim = hyper_param['hidden_dim'] 
+        drop = hyper_param['drop']
 
         self.encoder = nn.LSTM(in_units, latent_dim, 2, bidirectional=False, dropout=drop)
         self.fc1 = nn.Linear(latent_dim,latent_dim)
