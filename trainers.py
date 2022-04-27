@@ -10,12 +10,13 @@ import time
 import utils
 
 class VAE_trainer():
-    def __init__(self, model, results_dir):
+    def __init__(self, model, results_dir, hyper_param):
+
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.model = model.to(self.device)
-        self.opt = optim.Adam(self.model.parameters(), lr=0.0001, weight_decay=0)
+        self.opt = optim.Adam(self.model.parameters(), lr=hyper_param['lr'], weight_decay=hyper_param['wd'])
         self.results_dir = results_dir
-        self.cd_ratio = 0.27
+        self.cd_ratio = hyper_param['cd_ratio']#0.27
         print(f"Trainer object created with model: {self.model.name}")
 
     def train(self, train_data, num_epochs, criterion, test_data=None, load_weights = False, save_checkpoint=True): 
