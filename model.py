@@ -97,7 +97,7 @@ class CAE(nn.Module):
 
 
 class lstm_ae(nn.Module):
-    def __init__(self, in_units=137, out_units=182, t_out=180, hyper_param)-> None:
+    def __init__(self,hyper_param, in_units=137, out_units=182, t_out=180)-> None:
         super(lstm_ae, self).__init__()
         self.name = 'lstm_ae'
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
