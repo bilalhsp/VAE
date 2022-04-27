@@ -15,7 +15,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     package_data={
         'VAE': [
-            'conf/params.yaml'
+            'config.yaml'
         ]
     },
     classifiers=[
