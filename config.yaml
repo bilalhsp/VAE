@@ -1,0 +1,35 @@
+mc_maze_large:
+  results_dir: /scratch/gilbreth/ahmedb/vae/lstm_saved_results/large
+  dataset_name: mc_maze_large
+  data_dir: /000138/sub-Jenkins/ 
+  in_units: 122     
+  out_units: 162
+  t_out: 180
+  latent_dim: 100
+  drop: 0.2    
+mc_maze_medium:
+  results_dir: /scratch/gilbreth/ahmedb/vae/lstm_saved_results/medium
+  dataset_name: mc_maze_medium
+  data_dir: /000139/sub-Jenkins/ 
+  in_units: 114     
+  out_units: 152
+  t_out: 180
+  latent_dim: 100
+  drop: 0.2 
+mc_maze_small:
+  results_dir: /scratch/gilbreth/ahmedb/vae/lstm_saved_results/small
+  dataset_name: mc_maze_small
+  data_dir: /000140/sub-Jenkins/ 
+  in_units: 104     
+  out_units: 142
+  t_out: 180
+  latent_dim: 100
+  drop: 0.2   
+
+
+hyper_param:
+  epochs: 1000
+  batch_size: 32
+  lr: 1.0e-4
+  wd: 0
+  load_weights: False
