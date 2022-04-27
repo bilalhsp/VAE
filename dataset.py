@@ -11,15 +11,15 @@ from nlb_tools.make_tensors import make_train_input_tensors, make_eval_input_ten
 
 
 class nlb_data(Dataset):
-    def __init__(self, split='train'):
+    def __init__(self, fpath, name, split='train'):
         super(nlb_data, self).__init__()
         
-        curr_path = os.getcwd()
-        fpath = curr_path + '/000140/sub-Jenkins/'
+        # curr_path = os.getcwd()
+        # fpath = curr_path + '/000140/sub-Jenkins/'
         self.dataset = NWBDataset(fpath=fpath)
         self.dataset.resample(5)
         self.train_dict = make_train_input_tensors(dataset=self.dataset, 
-                                      dataset_name='mc_maze_small', 
+                                      dataset_name=name, 
                                       trial_split=split, # trial_split=['train', 'val'], for Test phase
                                       save_file=False, 
                                       include_forward_pred=True)
