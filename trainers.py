@@ -19,7 +19,7 @@ class VAE_trainer():
         self.cd_ratio = hyper_param['cd_ratio']#0.27
         print(f"Trainer object created with model: {self.model.name}")
 
-    def train(self, train_data, num_epochs, criterion, test_data=None, load_weights = False, save_checkpoint=True): 
+    def train(self, train_input,train_output , num_epochs, criterion, test_data=None, load_weights = False, save_checkpoint=True): 
         print(f"Training for {num_epochs} epoch has started...!") 
         prev_epochs = 0
         if load_weights:
@@ -39,25 +39,25 @@ class VAE_trainer():
             self.model.train()
             error = []
             count=0
-            for train_input,train_output in train_data:
-                train_input = train_input.to(self.device)
-                train_output = train_output.to(self.device)
+   #         for train_input,train_output in train_data:
+            train_input = train_input.to(self.device)
+            train_output = train_output.to(self.device)
 
-                input_mask, output_mask = self.make_mask(train_input, train_output)
-                masked_train_input = train_input.clone()
-                masked_train_input[input_mask] = 0.0 
-                      
-                count+=1
-                
-                self.opt.zero_grad()
-                train_predictions = self.model(masked_train_input)
-                #loss = utils.VAE_loss_fn(out, x)
-                # loss = criterion(out, y)
-                loss = torch.nn.functional.poisson_nll_loss(train_predictions[output_mask], train_output[output_mask], log_input=False)
-                loss.backward()
-                self.opt.step()
+            input_mask, output_mask = self.make_mask(train_input, train_output)
+            masked_train_input = train_input.clone()
+            masked_train_input[input_mask] = 0.0 
 
-                error.append(loss.item())
+            count+=1
+
+            self.opt.zero_grad()
+            train_predictions = self.model(masked_train_input)
+            #loss = utils.VAE_loss_fn(out, x)
+            # loss = criterion(out, y)
+            loss = torch.nn.functional.poisson_nll_loss(train_predictions[output_mask], train_output[output_mask], log_input=False)
+            loss.backward()
+            self.opt.step()
+
+            error.append(loss.item())
             epoch_loss = sum(error)/count
             
             loss_history.append(epoch_loss)
