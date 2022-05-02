@@ -79,7 +79,7 @@ class CAE(nn.Module):
         return out
 
     @torch.no_grad()
-    def generate(self, input):
+    def generate(self):
         mu = torch.randn(10, 100, device=self.device)
         log_var = torch.randn(10, 100, device=self.device)
         z = self.reparam(mu, log_var)
