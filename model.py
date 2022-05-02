@@ -101,14 +101,14 @@ class CAE(nn.Module):
 
 
 class lstm_ae(nn.Module):
-    def __init__(self,hyper_param, in_units=137, out_units=182, t_out=180)-> None:
+    def __init__(self,hyper_param, model_param)-> None:
         super(lstm_ae, self).__init__()
         self.name = 'lstm_ae'
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        # in_units = 137
-        # out_units = 182
-        
-        self.t_out = t_out
+        in_units = model_param['in_units']
+        out_units = model_param['out_units']
+        self.t_out = model_param['t_out']
+
         latent_dim = hyper_param['hidden_dim'] 
         drop = hyper_param['drop']
 
