@@ -1,25 +1,25 @@
 large:
-  results_dir: /content/VAE/drive/MyDrive/ECE695/project/results/large
+  results_dir: ./results/large
   dataset_name: mc_maze_large
-  data_dir: /content/VAE/drive/MyDrive/ECE695/project/mc_maze_data/000138/sub-Jenkins/ 
+  data_dir: ./data/000138/sub-Jenkins/ 
   in_units: 122     
   out_units: 162
   t_out: 180
   latent_dim: 100
   drop: 0.2    
 medium:
-  results_dir: /content/VAE/drive/MyDrive/ECE695/project/results/medium
+  results_dir: ./results/medium
   dataset_name: mc_maze_medium
-  data_dir: /content/VAE/drive/MyDrive/ECE695/project/mc_maze_data/000139/sub-Jenkins/ 
+  data_dir: /data/000139/sub-Jenkins/ 
   in_units: 114     
   out_units: 152
   t_out: 180
   latent_dim: 100
   drop: 0.2 
 small:
-  results_dir: /content/VAE/drive/MyDrive/ECE695/project/results/small
+  results_dir: ./results/small
   dataset_name: mc_maze_small
-  data_dir: /content/VAE/drive/MyDrive/ECE695/project/mc_maze_data/000140/sub-Jenkins/ 
+  data_dir: /data/000140/sub-Jenkins/ 
   in_units: 104     
   out_units: 142
   t_out: 180
