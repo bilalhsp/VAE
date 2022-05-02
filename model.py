@@ -80,10 +80,14 @@ class CAE(nn.Module):
 
     @torch.no_grad()
     def generate(self, input):
-        input = self.latent_out(input)
-        input = input.view(input.shape[0],16,7,7)
+        mu = torch.randn(10, 100, device=self.device)
+        log_var = torch.randn(10, 100, device=self.device)
+        z = self.reparam(mu, log_var)
+        z = self.fc2(z)
+        #print(f"Shape of z: {z.shape}")
+        z = z.view(z.shape[0],1024,1,1)
         #print(out.shape)
-        out = self.decoder(input)
+        out = self.decoder(z)
         return out
 
     @torch.no_grad()

@@ -109,7 +109,7 @@ class VAE_trainer():
             chkpoint = files[-1]
             filename = os.path.join(self.results_dir, chkpoint)
         
-        checkpoint = torch.load(filename)
+        checkpoint = torch.load(filename, map_location=self.device)
         self.model.load_state_dict(checkpoint['model_state'])
         self.opt.load_state_dict(checkpoint['opt_state'])
 
