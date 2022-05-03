@@ -14,7 +14,7 @@
     - For evaluation, I uploaded results on the 'evalai' website and the results were not very impressive and did not improve beyond a certain point even with different combinations of hyper-parameters.
  
 
-###Task 1:
+### Task 1:
 Training VAE on CelebA dataset for generating images:
 This notebook can be used to go through the 'test.ipynb', which has step-by-step instructions on how to load pre-trained model and generate random images.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bilalhsp/VAE/blob/main/test.ipynb)
@@ -22,7 +22,7 @@ This notebook can be used to go through the 'test.ipynb', which has step-by-step
 Note: Reonstruction part needs to load 'CelebA' data but the link provided by pytorch is not reliable and often fails to load data. I manually downloaded data from some other source and then used that for training. The dataset is huge and cannot be made part of the submission. You can try to load data but this check may cause errors. Generating random images does not need any data (only pretrained weights) so it works anyway.
 
 
-###Task 2:
+### Task 2:
 Training LSTM_Autoencoder for Neural Latent Benchmarking:
 This notebook allows to use pretrained weights (separately) for 3 datasets.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bilalhsp/VAE/blob/main/nlb_data.ipynb)
