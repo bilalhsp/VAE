@@ -27,4 +27,3 @@ Training LSTM_Autoencoder for Neural Latent Benchmarking:
 This notebook allows to use pretrained weights (separately) for 3 datasets.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bilalhsp/VAE/blob/main/nlb_data.ipynb)
  It will create a submission file that can be uploaded to 'evalai' using the script provided at the end of the notebook but my login will be needed in order to look at results of the submission.
- 

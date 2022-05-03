@@ -10,7 +10,7 @@ large:
 medium:
   results_dir: ./results/medium
   dataset_name: mc_maze_medium
-  data_dir: /data/000139/sub-Jenkins/ 
+  data_dir: ./data/000139/sub-Jenkins/ 
   in_units: 114     
   out_units: 152
   t_out: 180
@@ -19,8 +19,8 @@ medium:
 small:
   results_dir: ./results/small
   dataset_name: mc_maze_small
-  data_dir: /data/000140/sub-Jenkins/ 
-  in_units: 104     
+  data_dir: ./data/000140/sub-Jenkins/ 
+  in_units: 107     
   out_units: 142
   t_out: 180
   latent_dim: 100
