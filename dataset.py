@@ -46,21 +46,8 @@ class nlb_data(Dataset):
                                 self.train_dict['train_spikes_heldout_forward'][idx],
                             ], axis=0),
                         ], axis=1), dtype=torch.float32)
-        # b = torch.tensor(self.train_dict['train_spikes_heldout'][idx], dtype=torch.float32)
-        # c = torch.tensor(self.train_dict['train_spikes_heldin_forward'][idx], dtype=torch.float32)
-        # d = torch.tensor(self.train_dict['train_spikes_heldout_forward'][idx], dtype=torch.float32)
-        
-        # e = torch.cat((torch.cat((a,b), dim=1), torch.cat((c,d), dim=1)), dim=0)
-
 
         return a, b
-
-
-        
-
-
-
-
 
 
 class fashionMNIST():

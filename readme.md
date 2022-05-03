@@ -27,3 +27,10 @@ Training LSTM_Autoencoder for Neural Latent Benchmarking:
 This notebook allows to use pretrained weights (separately) for 3 datasets.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bilalhsp/VAE/blob/main/nlb_data.ipynb)
  It will create a submission file that can be uploaded to 'evalai' using the script provided at the end of the notebook but my login will be needed in order to look at results of the submission.
+
+### Overview of files
+- dataset.py: This contains dataset classes that I used, mainly 'CelebA', 'nlb_data' used for task 1 and 2. In addition, I also used 'MNIST' and 'FashionMNIST' along the way, which simply downloads data using pytorch datasets.
+- model.py: This module defines architectures of models to be used. Class 'CAE' was used for 'CelebA' dataset and 'lstm_ae' was used for 'nlb_data'. (Note: I slightly modified lstm_ae after presentation to use all the time steps of latent vector to improve the data generation process)
+- trainer.py: This module has 'VAE_trainer' which acts as wrapper class for models and has functionalities like model training and saving/loading checkpoints.
+- run.py, nlb_run.py and eval.py: These were used to submit jobs to gilbreth for models training, evaluation and saving the pretrained weights.
+- utils.py: This module carries loss functional for variational autoencoder (used for CelebA) 
